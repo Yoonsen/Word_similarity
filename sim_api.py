@@ -40,8 +40,6 @@ def display_finds(r, num_rows, num_columns, width=500):
 import numpy as np
 
 
-# In[3]:
-
 
 def collections():
     r = requests.get(f"{base_url}/collections")
@@ -52,8 +50,6 @@ def collections():
     return res
 
 
-# In[4]:
-
 
 def words(word=None, limit=10, collection_name=None):
     params = locals()
@@ -63,9 +59,6 @@ def words(word=None, limit=10, collection_name=None):
     else:
         res = pd.DataFrame()
     return res
-
-
-# In[25]:
 
 
 def image(search=None, hits=10):

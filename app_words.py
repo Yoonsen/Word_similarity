@@ -26,9 +26,7 @@ st.write("## Laget [Gensims](https://radimrehurek.com/gensim/) ordmodeller konst
 if 'model' not in st.session_state:
     st.session_state['model'] = "vss_1850_cos"
 
-#st.write(sa.collections())
-#st.write(sa.words("han", collection_name="vss_1850_cos"))
-# Test med most_similar for forskjellige ord for evaluering.
+
 word_col, anta_col = st.columns([5, 2])
 if "words" not in st.session_state:
     st.session_state.words = 'Qvinde Kvinde Kvinne'
