@@ -55,7 +55,7 @@ def collections():
 # In[4]:
 
 
-def words(word=None, collection_name=None):
+def words(word=None, limit=10, collection_name=None):
     params = locals()
     r = requests.get(f"{base_url}/sim_words", params=params)
     if r.status_code == 200:
