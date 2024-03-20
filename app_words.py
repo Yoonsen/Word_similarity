@@ -12,8 +12,8 @@ import sim_api as sa
         
 
 @st.cache_data(show_spinner = False)
-def get_words(word="", hits = 10, collection_name="vss_1850_cos"):
-    return sa.words(word=word, collection_name=collection_name)
+def get_words(word="", limit = 10, collection_name="vss_1850_cos"):
+    return sa.words(word=word, limit=limit, collection_name=collection_name)
 
 
 
@@ -21,6 +21,7 @@ st.set_page_config(page_title="Words", layout="wide", initial_sidebar_state="aut
 st.session_state.update(st.session_state)
 
 st.header("Nærliggende ord")
+st.write("## Laget [Gensims](https://radimrehurek.com/gensim/) ordmodeller konstruert med data fra [dhlab](https://dh.nb.no)")
 
 if 'model' not in st.session_state:
     st.session_state['model'] = "vss_1850_cos"
@@ -46,7 +47,7 @@ T = ""
 for x in words:
     #st.write(sa.words(x))
     T += f"""### {x} \n {', '.join([
-        x['word'] for _, x in get_words(x, hits=antall_ord, collection_name=st.session_state.model).iterrows()
+        x['word'] for _, x in get_words(x, limit=antall_ord, collection_name=st.session_state.model).iterrows()
     ])}\n\n"""
     
         
