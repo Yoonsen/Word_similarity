@@ -21,7 +21,7 @@ st.set_page_config(page_title="Words", layout="wide", initial_sidebar_state="aut
 st.session_state.update(st.session_state)
 
 st.header("Nærliggende ord")
-st.write("## Laget [Gensims](https://radimrehurek.com/gensim/) ordmodeller konstruert med data fra [dhlab](https://dh.nb.no)")
+st.write("#### Laget med [Gensims](https://radimrehurek.com/gensim/) ordmodeller konstruert med data fra [dhlab](https://dh.nb.no)")
 
 if 'model' not in st.session_state:
     st.session_state['model'] = "vss_1850_cos"
