@@ -23,11 +23,11 @@ st.session_state.update(st.session_state)
 st.header("Nærliggende ord")
 st.write("#### Laget med [Gensims](https://radimrehurek.com/gensim/) ordmodeller konstruert med data fra [dhlab](https://dh.nb.no)")
 
-if 'model' not in st.session_state:
-    st.session_state['model'] = "vss_1850_cos"
+#if 'model' not in st.session_state:
+#    st.session_state['models'] = "vss_1850_cos"
 
 
-word_col, anta_col = st.columns([5, 2])
+word_col, anta_col, model_col = st.columns([5, 2, 2])
 if "words" not in st.session_state:
     st.session_state.words = 'Qvinde Kvinde Kvinne'
     
@@ -40,7 +40,10 @@ with word_col:
         
 with anta_col:
     antall_ord = st.number_input("Antall nærliggende ord", min_value=1, max_value=30, value=10, key="antall_ord")
-
+        
+with model_col:
+    st.session_state['model'] = st.selectbox("Modell", ["vss_1950-2015_cos","vss_1850_cos"])
+        
 T = ""
 for x in words:
     #st.write(sa.words(x))
