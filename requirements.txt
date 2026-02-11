@@ -1,6 +1,11 @@
-pandas
+pandas>=1.5,<2.3
 dhlab
-streamlit
-IPython
 requests
 st_clickable_images
+
+# ikke nødvendig, men ofte unødvendig i en ren Streamlit-app:
+# IPython
+
+# Streamlit + Altair pinned lik den appen som funker
+streamlit==1.32.0
+altair==4.2.2
